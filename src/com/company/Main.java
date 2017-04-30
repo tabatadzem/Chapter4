@@ -73,64 +73,101 @@ public class Main {
 //                + Character.toUpperCase('q'));
 
 
-        String set1 = " 1 3 5 7\n"+
-                      " 9 11 13 15\n" +
-                      "17 19 21 23\n" +
-                      "25 27 29 31";
+//        String set1 = " 1 3 5 7\n"+
+//                      " 9 11 13 15\n" +
+//                      "17 19 21 23\n" +
+//                      "25 27 29 31";
+//
+//        String set2 = " 2 3 6 7\n" +
+//                      "10 11 14 15\n" +
+//                      "18 19 22 23\n" +
+//                      "26 27 30 31";
+//
+//        String set3 = " 4 5 6 7\n" +
+//                      "12 13 14 15\n" +
+//                      "20 21 22 23\n" +
+//                      "28 29 30 31";
+//
+//        String set4 = " 8 9 10 11\n" +
+//                      "12 13 14 15\n" +
+//                      "24 25 26 27\n" +
+//                      "28 29 30 31";
+//
+//        String set5 = "16 17 18 19\n" +
+//                      "20 21 22 23\n" +
+//                      "24 25 26 27\n" +
+//                      "28 29 30 31";
+//        int day = 0;
+//        Scanner input = new Scanner(System.in);
+//        System.out.print(set1);
+//        System.out.print("\nEnter 0 for No and 1 for Yes: ");
+//        int answer = input.nextInt();
+//        if (answer == 1){
+//            day +=1;}
+//        System.out.print("\nIs your birthday in Set2?\n");
+//        System.out.print(set2);
+//        System.out.print("\nEnter 0 for No and 1 for Yes: ");
+//        answer = input.nextInt();
+//        if (answer == 1){
+//            day +=2;}
+//        System.out.print("\nIs your birthday in Set3?\n");
+//        System.out.print(set3);
+//        System.out.print("\nEnter 0 for No and 1 for Yes: ");
+//        answer = input.nextInt();
+//        if (answer == 1){
+//            day +=4;}
+//        System.out.print("\nIs your birthday in Set4?\n");
+//        System.out.print(set4);
+//        System.out.print("\nEnter 0 for No and 1 for Yes: ");
+//        answer = input.nextInt();
+//        if (answer == 1){
+//            day +=8;}
+//        System.out.print("\nIs your birthday in Set5?\n");
+//        System.out.print(set5);
+//        System.out.print("\nEnter 0 for No and 1 for Yes: ");
+//        answer = input.nextInt();
+//        if (answer == 1){
+//            day +=16;}
+//        System.out.println("\nYour birthday is " + day + "!");
 
-        String set2 = " 2 3 6 7\n" +
-                      "10 11 14 15\n" +
-                      "18 19 22 23\n" +
-                      "26 27 30 31";
 
-        String set3 = " 4 5 6 7\n" +
-                      "12 13 14 15\n" +
-                      "20 21 22 23\n" +
-                      "28 29 30 31";
+//        Scanner input = new Scanner(System.in);
+//        System.out.print("Enter a hex digit: ");
+//        String hexString = input.nextLine();
+//        if (hexString.length() != 1) {
+//            System.out.println("You must enter exactly one character");
+//            System.exit(1);
+//             }
+//        char ch = hexString.charAt(0);
+//        if (ch <= 'F' && ch >= 'A') {
+//            int value = ch - 'A' + 10;
+//            System.out.println("The decimal value for hex digit " + ch + " is " + value);
+//            }else if (Character.isDigit(ch)) {
+//            System.out.println("The decimal value for hex digit " + ch + " is " + ch);}
+//            else {
+//                System.out.println(ch + " is an invalid input");}
 
-        String set4 = " 8 9 10 11\n" +
-                      "12 13 14 15\n" +
-                      "24 25 26 27\n" +
-                      "28 29 30 31";
-
-        String set5 = "16 17 18 19\n" +
-                      "20 21 22 23\n" +
-                      "24 25 26 27\n" +
-                      "28 29 30 31";
-        int day = 0;
+        String lottery = "" + (int)(Math.random() * 10)
+         + (int)(Math.random() * 10);
         Scanner input = new Scanner(System.in);
-        System.out.print(set1);
-        System.out.print("\nEnter 0 for No and 1 for Yes: ");
-        int answer = input.nextInt();
-        if (answer == 1){
-            day +=1;}
-        System.out.print("\nIs your birthday in Set2?\n");
-        System.out.print(set2);
-        System.out.print("\nEnter 0 for No and 1 for Yes: ");
-        answer = input.nextInt();
-        if (answer == 1){
-            day +=2;}
-        System.out.print("\nIs your birthday in Set3?\n");
-        System.out.print(set3);
-        System.out.print("\nEnter 0 for No and 1 for Yes: ");
-        answer = input.nextInt();
-        if (answer == 1){
-            day +=4;}
-        System.out.print("\nIs your birthday in Set4?\n");
-        System.out.print(set4);
-        System.out.print("\nEnter 0 for No and 1 for Yes: ");
-        answer = input.nextInt();
-        if (answer == 1){
-            day +=8;}
-        System.out.print("\nIs your birthday in Set5?\n");
-        System.out.print(set5);
-        System.out.print("\nEnter 0 for No and 1 for Yes: ");
-        answer = input.nextInt();
-        if (answer == 1){
-            day +=16;}
-        System.out.println("\nYour birthday is " + day + "!");
-
-
+        System.out.print("Enter your lottery pick (two digits): ");
+        String guess = input.nextLine();
+        char lotteryDigit1 = lottery.charAt(0);
+        char lotteryDigit2 = lottery.charAt(1);
+        char guessDigit1 = guess.charAt(0);
+        char guessDigit2 = guess.charAt(1);
+        System.out.println("The lottery number is " + lottery);
+        if (guess.equals(lottery))
+            System.out.println("Exact match: you win $10,000");
+        else if (guessDigit2 == lotteryDigit1
+        && guessDigit1 == lotteryDigit2)
+        System.out.println("Match all digits: you win $3,000");
+        else if (guessDigit1 == lotteryDigit1
+                || guessDigit1 == lotteryDigit2
+                || guessDigit2 == lotteryDigit1
+                || guessDigit2 == lotteryDigit2)
+         System.out.println("Match one digit: you win $1,000");
+        else  System.out.println("Sorry, no match");
 
     }
 }
