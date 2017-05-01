@@ -169,17 +169,25 @@ public class Main {
 //         System.out.println("Match one digit: you win $1,000");
 //        else  System.out.println("Sorry, no match");
 
-        System.out.printf("%-10s%-10s%-10s%-10s%-10s\n", "Degrees",
-               "Radians", "Sine", "Cosine", "Tangent");
-        int degrees = 30;
-        double radians = Math.toRadians(degrees);
-            System.out.printf("%-10d%-10.4f%-10.4f%-10.4f%-10.4f\n", degrees,
-                radians, Math.sin(radians), Math.cos(radians), Math.tan(radians));
-        degrees = 60;
-        radians = Math.toRadians(degrees);
-        System.out.printf("%-10d%-10.4f%-10.4f%-10.4f%-10.4f\n", degrees,
-                 radians, Math.sin(radians), Math.cos(radians),
-                 Math.tan(radians));
+//        System.out.printf("%-10s%-10s%-10s%-10s%-10s\n", "Degrees",
+//               "Radians", "Sine", "Cosine", "Tangent");
+//        int degrees = 30;
+//        double radians = Math.toRadians(degrees);
+//            System.out.printf("%-10d%-10.4f%-10.4f%-10.4f%-10.4f\n", degrees,
+//                radians, Math.sin(radians), Math.cos(radians), Math.tan(radians));
+//        degrees = 60;
+//        radians = Math.toRadians(degrees);
+//        System.out.printf("%-10d%-10.4f%-10.4f%-10.4f%-10.4f\n", degrees,
+//                 radians, Math.sin(radians), Math.cos(radians),
+//                 Math.tan(radians));
+
+
+            Scanner input = new Scanner(System.in);
+            System.out.println("please enter the distance from the center to vertex");
+            double distance = input.nextDouble();
+            double side = 2 * distance * Math.sin(Math.PI/5);
+            double Area = (5 * side * side)/(4 * Math.tan(Math.PI/5));
+            System.out.println("the answer is "+ Math.round(Area));
 
     }
 }
