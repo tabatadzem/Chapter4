@@ -256,34 +256,56 @@ public class Main {
 //        double area = (numberOfSides * length*length)/(4 * Math.tan(Math.PI/numberOfSides));
 //        System.out.print(Math.round(area));
 
-        double RADIUS = 40;
-        double angle1 = (Math.random() * (2 * Math.PI));
-        double angle2 = (Math.random() * (2 * Math.PI));
-        double angle3 = (Math.random() * (2 * Math.PI));
+//        double RADIUS = 40;
+//        double angle1 = (Math.random() * (2 * Math.PI));
+//        double angle2 = (Math.random() * (2 * Math.PI));
+//        double angle3 = (Math.random() * (2 * Math.PI));
+//
+//        // generate random points by random angle using trigonometry
+//        double x1 = RADIUS * Math.cos(angle1);
+//        double y1 = RADIUS * Math.sin(angle1);
+//        double x2 = RADIUS * Math.cos(angle2);
+//        double y2 = RADIUS * Math.sin(angle2);
+//        double x3 = RADIUS * Math.cos(angle3);
+//        double y3 = RADIUS * Math.sin(angle3);
+//
+//        // calculating sides of the triangle
+//        double a = Math.sqrt(Math.pow(x2 - x3, 2) + Math.pow(y2 - y3, 2));
+//        double b = Math.sqrt(Math.pow(x1 - x3, 2) + Math.pow(y1 - y3, 2));
+//        double c = Math.sqrt(Math.pow(x1 - x2, 2) + Math.pow(y1 - y2, 2));
+//        // calculating angles of triangle
+//        double angleA = Math.toDegrees(Math.acos((a * a - b * b - c * c)
+//                / (-2 * b * c)));
+//        double angleB = Math.toDegrees(Math.acos((b * b - a * a - c * c)
+//                / (-2 * a * c)));
+//        double angleC = Math.toDegrees(Math.acos((c * c - b * b - a * a)
+//                / (-2 * a * b)));
+//        System.out.println("The three angles are " +
+//                Math.round(angleA * 100) / 100.0 + " " +
+//                Math.round(angleB * 100) / 100.0 + " " +
+//                Math.round(angleC * 100) / 100.0);
 
-        // generate random points by random angle using trigonometry
-        double x1 = RADIUS * Math.cos(angle1);
-        double y1 = RADIUS * Math.sin(angle1);
-        double x2 = RADIUS * Math.cos(angle2);
-        double y2 = RADIUS * Math.sin(angle2);
-        double x3 = RADIUS * Math.cos(angle3);
-        double y3 = RADIUS * Math.sin(angle3);
 
-        // calculating sides of the triangle
-        double a = Math.sqrt(Math.pow(x2 - x3, 2) + Math.pow(y2 - y3, 2));
-        double b = Math.sqrt(Math.pow(x1 - x3, 2) + Math.pow(y1 - y3, 2));
-        double c = Math.sqrt(Math.pow(x1 - x2, 2) + Math.pow(y1 - y2, 2));
-        // calculating angles of triangle
-        double angleA = Math.toDegrees(Math.acos((a * a - b * b - c * c)
-                / (-2 * b * c)));
-        double angleB = Math.toDegrees(Math.acos((b * b - a * a - c * c)
-                / (-2 * a * c)));
-        double angleC = Math.toDegrees(Math.acos((c * c - b * b - a * a)
-                / (-2 * a * b)));
-        System.out.println("The three angles are " +
-                Math.round(angleA * 100) / 100.0 + " " +
-                Math.round(angleB * 100) / 100.0 + " " +
-                Math.round(angleC * 100) / 100.0);
+        Scanner input = new Scanner(System.in);
+        System.out.println("please enter the radius");
+        double radius = input.nextDouble();
+        double x1 = radius * Math.cos(Math.PI/2-Math.toRadians(72));
+        double y1 = radius * Math.sin(Math.PI/2 -Math.toRadians(72));
+        double x2 = radius * Math.cos(Math.PI/2);
+        double y2 = radius * Math.sin( Math.PI/2);
+        double x3 = radius * Math.cos(Math.PI/2 + Math.toRadians(72));
+        double y3 = radius * Math.sin(Math.PI/2 + Math.toRadians(72));
+        double x4 = radius * Math.cos(Math.PI/2 + 2 * Math.toRadians(72));
+        double y4 = radius * Math.sin(Math.PI/2 + 2 *Math.toRadians(72));
+        double x5 = radius * Math.cos(Math.PI/2 + 3 * Math.toRadians(72));
+        double y5 = radius * Math.sin(Math.PI/2 + 3 *Math.toRadians(72));
+        System.out.println(Math.round(x1)+" "+Math.round(y1));
+        System.out.println(Math.round(x2)+" "+Math.round(y2));
+        System.out.println(Math.round(x3)+" "+Math.round(y3));
+        System.out.println(Math.round(x4)+" "+Math.round(y4));
+        System.out.println(Math.round(x5)+" "+Math.round(y5));
+
+
 
 
     }
