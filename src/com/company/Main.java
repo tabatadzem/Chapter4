@@ -204,42 +204,86 @@ public class Main {
 //                + Math.cos(Math.toRadians(x1))*Math.cos(Math.toRadians(x2))*Math.cos(Math.toRadians(y1 - y2))));
 //                System.out.println(Distance);
 
-        double x1 = 33.7490;
-        double y1 = 84.3880;
-        System.out.println(" latitude and longitude of Atlanta " + "x1: "+ x1 + " and "+ "y1 "+ y1);
-        double x2 = 28.5383;
-        double y2 = 81.3792;
-        System.out.println(" latitude and longitude of Orlando " + "x2: "+ x2 + " and "+ "y2 "+ y2);
-        double x3 = 32.0835;
-        double y3 = 81.0998;
-        System.out.println(" latitude and longitude of Savannah " + "x3: "+ x3 + " and "+ "y3 "+ y3);
-        double x4 = 35.2271;
-        double y4 = 80.3431;
-        System.out.println(" latitude and longitude of Charlotte " + "x4: "+ x4 + " and "+ "y4 "+ y4);
-        final double earthRadius = 6371.01;
-        double distanceAtlantaOrlando = earthRadius * Math.acos(Math.sin(Math.toRadians(x1)
-        *Math.sin(Math.toRadians(x2)) + Math.cos(Math.toRadians(x1))*Math.cos(Math.toRadians(x2))
-        *Math.cos(Math.toRadians(y1 - y2))));
-        double distanceOrlandoSavanna = earthRadius * Math.acos(Math.sin(Math.toRadians(x2)
-                *Math.sin(Math.toRadians(x3)) + Math.cos(Math.toRadians(x2))*Math.cos(Math.toRadians(x3))
-                *Math.cos(Math.toRadians(y2 - y3))));
-        double distanceSavannaCharlotte = earthRadius * Math.acos(Math.sin(Math.toRadians(x3)
-                *Math.sin(Math.toRadians(x4)) + Math.cos(Math.toRadians(x3))*Math.cos(Math.toRadians(x4))
-                *Math.cos(Math.toRadians(y3 - y4))));
-        double distanceCharlotteAtlanta = earthRadius * Math.acos(Math.sin(Math.toRadians(x4)
-                *Math.sin(Math.toRadians(x1)) + Math.cos(Math.toRadians(x4))*Math.cos(Math.toRadians(x1))
-                *Math.cos(Math.toRadians(y4 - y1))));
-        double distanceSavannahAtlanta = earthRadius * Math.acos(Math.sin(Math.toRadians(x3)
-                *Math.sin(Math.toRadians(x1)) + Math.cos(Math.toRadians(x3))*Math.cos(Math.toRadians(x1))
-                *Math.cos(Math.toRadians(y3 - y1))));
-        double firstPart = (distanceAtlantaOrlando + distanceOrlandoSavanna + distanceSavannahAtlanta)/2;
-        double areaOfFirstPart = Math.sqrt(firstPart * (firstPart - distanceAtlantaOrlando) *
-                (firstPart - distanceOrlandoSavanna) * (firstPart - distanceSavannahAtlanta));
-        double secondPart = (distanceSavannahAtlanta + distanceSavannaCharlotte + distanceCharlotteAtlanta)/2;
-        double areaOfSecondPart = Math.sqrt(secondPart * (secondPart - distanceSavannahAtlanta)
-        *(secondPart - distanceSavannaCharlotte) * (secondPart - distanceCharlotteAtlanta));
-        double totalArea = areaOfFirstPart + areaOfSecondPart;
-        System.out.println(" the area between four cities is: " +Math.round(totalArea));
+//        double x1 = 33.7490;
+//        double y1 = 84.3880;
+//        System.out.println(" latitude and longitude of Atlanta " + "x1: "+ x1 + " and "+ "y1 "+ y1);
+//        double x2 = 28.5383;
+//        double y2 = 81.3792;
+//        System.out.println(" latitude and longitude of Orlando " + "x2: "+ x2 + " and "+ "y2 "+ y2);
+//        double x3 = 32.0835;
+//        double y3 = 81.0998;
+//        System.out.println(" latitude and longitude of Savannah " + "x3: "+ x3 + " and "+ "y3 "+ y3);
+//        double x4 = 35.2271;
+//        double y4 = 80.3431;
+//        System.out.println(" latitude and longitude of Charlotte " + "x4: "+ x4 + " and "+ "y4 "+ y4);
+//        final double earthRadius = 6371.01;
+//        double distanceAtlantaOrlando = earthRadius * Math.acos(Math.sin(Math.toRadians(x1)
+//        *Math.sin(Math.toRadians(x2)) + Math.cos(Math.toRadians(x1))*Math.cos(Math.toRadians(x2))
+//        *Math.cos(Math.toRadians(y1 - y2))));
+//        double distanceOrlandoSavanna = earthRadius * Math.acos(Math.sin(Math.toRadians(x2)
+//                *Math.sin(Math.toRadians(x3)) + Math.cos(Math.toRadians(x2))*Math.cos(Math.toRadians(x3))
+//                *Math.cos(Math.toRadians(y2 - y3))));
+//        double distanceSavannaCharlotte = earthRadius * Math.acos(Math.sin(Math.toRadians(x3)
+//                *Math.sin(Math.toRadians(x4)) + Math.cos(Math.toRadians(x3))*Math.cos(Math.toRadians(x4))
+//                *Math.cos(Math.toRadians(y3 - y4))));
+//        double distanceCharlotteAtlanta = earthRadius * Math.acos(Math.sin(Math.toRadians(x4)
+//                *Math.sin(Math.toRadians(x1)) + Math.cos(Math.toRadians(x4))*Math.cos(Math.toRadians(x1))
+//                *Math.cos(Math.toRadians(y4 - y1))));
+//        double distanceSavannahAtlanta = earthRadius * Math.acos(Math.sin(Math.toRadians(x3)
+//                *Math.sin(Math.toRadians(x1)) + Math.cos(Math.toRadians(x3))*Math.cos(Math.toRadians(x1))
+//                *Math.cos(Math.toRadians(y3 - y1))));
+//        double firstPart = (distanceAtlantaOrlando + distanceOrlandoSavanna + distanceSavannahAtlanta)/2;
+//        double areaOfFirstPart = Math.sqrt(firstPart * (firstPart - distanceAtlantaOrlando) *
+//                (firstPart - distanceOrlandoSavanna) * (firstPart - distanceSavannahAtlanta));
+//        double secondPart = (distanceSavannahAtlanta + distanceSavannaCharlotte + distanceCharlotteAtlanta)/2;
+//        double areaOfSecondPart = Math.sqrt(secondPart * (secondPart - distanceSavannahAtlanta)
+//        *(secondPart - distanceSavannaCharlotte) * (secondPart - distanceCharlotteAtlanta));
+//        double totalArea = areaOfFirstPart + areaOfSecondPart;
+//        System.out.println(" the area between four cities is: " +Math.round(totalArea));
+
+
+
+
+//        Scanner input = new Scanner(System.in);
+//        double side = input.nextDouble();
+//        double area= (6*side * side)/(4 * Math.tan(Math.PI/6));
+//        System.out.println(area)
+//
+//        Scanner input = new Scanner(System.in);
+//        System.out.println("please enter the number of the sides and length");
+//        int numberOfSides = input.nextInt();
+//        double length = input.nextDouble();
+//        double area = (numberOfSides * length*length)/(4 * Math.tan(Math.PI/numberOfSides));
+//        System.out.print(Math.round(area));
+
+        double RADIUS = 40;
+        double angle1 = (Math.random() * (2 * Math.PI));
+        double angle2 = (Math.random() * (2 * Math.PI));
+        double angle3 = (Math.random() * (2 * Math.PI));
+
+        // generate random points by random angle using trigonometry
+        double x1 = RADIUS * Math.cos(angle1);
+        double y1 = RADIUS * Math.sin(angle1);
+        double x2 = RADIUS * Math.cos(angle2);
+        double y2 = RADIUS * Math.sin(angle2);
+        double x3 = RADIUS * Math.cos(angle3);
+        double y3 = RADIUS * Math.sin(angle3);
+
+        // calculating sides of the triangle
+        double a = Math.sqrt(Math.pow(x2 - x3, 2) + Math.pow(y2 - y3, 2));
+        double b = Math.sqrt(Math.pow(x1 - x3, 2) + Math.pow(y1 - y3, 2));
+        double c = Math.sqrt(Math.pow(x1 - x2, 2) + Math.pow(y1 - y2, 2));
+        // calculating angles of triangle
+        double angleA = Math.toDegrees(Math.acos((a * a - b * b - c * c)
+                / (-2 * b * c)));
+        double angleB = Math.toDegrees(Math.acos((b * b - a * a - c * c)
+                / (-2 * a * c)));
+        double angleC = Math.toDegrees(Math.acos((c * c - b * b - a * a)
+                / (-2 * a * b)));
+        System.out.println("The three angles are " +
+                Math.round(angleA * 100) / 100.0 + " " +
+                Math.round(angleB * 100) / 100.0 + " " +
+                Math.round(angleC * 100) / 100.0);
 
 
     }
