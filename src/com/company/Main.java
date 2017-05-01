@@ -181,13 +181,28 @@ public class Main {
 //                 radians, Math.sin(radians), Math.cos(radians),
 //                 Math.tan(radians));
 
+//
+//            Scanner input = new Scanner(System.in);
+//            System.out.println("please enter the distance from the center to vertex");
+//            double distance = input.nextDouble();
+//            double side = 2 * distance * Math.sin(Math.PI/5);
+//            double Area = (5 * side * side)/(4 * Math.tan(Math.PI/5));
+//            System.out.println("the answer is "+ Math.round(Area));
 
-            Scanner input = new Scanner(System.in);
-            System.out.println("please enter the distance from the center to vertex");
-            double distance = input.nextDouble();
-            double side = 2 * distance * Math.sin(Math.PI/5);
-            double Area = (5 * side * side)/(4 * Math.tan(Math.PI/5));
-            System.out.println("the answer is "+ Math.round(Area));
+
+
+
+                Scanner input = new Scanner(System.in);
+                System.out.println("please enter the point 1");
+                double x1 = input.nextDouble();
+                double y1 = input.nextDouble();
+                System.out.println("please enter point the 2");
+                double x2 = input.nextDouble();
+                double y2 = input.nextDouble();
+                final double earthRadius = 6371.01;
+                double Distance = earthRadius * Math.acos(Math.sin(Math.toRadians(x1)*Math.sin(Math.toRadians(x2))
+                + Math.cos(Math.toRadians(x1))*Math.cos(Math.toRadians(x2))*Math.cos(Math.toRadians(y1 - y2))));
+                System.out.println(Distance);
 
     }
 }
