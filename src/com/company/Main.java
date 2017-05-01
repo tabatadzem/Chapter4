@@ -192,17 +192,55 @@ public class Main {
 
 
 
-                Scanner input = new Scanner(System.in);
-                System.out.println("please enter the point 1");
-                double x1 = input.nextDouble();
-                double y1 = input.nextDouble();
-                System.out.println("please enter point the 2");
-                double x2 = input.nextDouble();
-                double y2 = input.nextDouble();
-                final double earthRadius = 6371.01;
-                double Distance = earthRadius * Math.acos(Math.sin(Math.toRadians(x1)*Math.sin(Math.toRadians(x2))
-                + Math.cos(Math.toRadians(x1))*Math.cos(Math.toRadians(x2))*Math.cos(Math.toRadians(y1 - y2))));
-                System.out.println(Distance);
+//                Scanner input = new Scanner(System.in);
+//                System.out.println("please enter the point 1");
+//                double x1 = input.nextDouble();
+//                double y1 = input.nextDouble();
+//                System.out.println("please enter point the 2");
+//                double x2 = input.nextDouble();
+//                double y2 = input.nextDouble();
+//                final double earthRadius = 6371.01;
+//                double Distance = earthRadius * Math.acos(Math.sin(Math.toRadians(x1)*Math.sin(Math.toRadians(x2))
+//                + Math.cos(Math.toRadians(x1))*Math.cos(Math.toRadians(x2))*Math.cos(Math.toRadians(y1 - y2))));
+//                System.out.println(Distance);
+
+        double x1 = 33.7490;
+        double y1 = 84.3880;
+        System.out.println(" latitude and longitude of Atlanta " + "x1: "+ x1 + " and "+ "y1 "+ y1);
+        double x2 = 28.5383;
+        double y2 = 81.3792;
+        System.out.println(" latitude and longitude of Orlando " + "x2: "+ x2 + " and "+ "y2 "+ y2);
+        double x3 = 32.0835;
+        double y3 = 81.0998;
+        System.out.println(" latitude and longitude of Savannah " + "x3: "+ x3 + " and "+ "y3 "+ y3);
+        double x4 = 35.2271;
+        double y4 = 80.3431;
+        System.out.println(" latitude and longitude of Charlotte " + "x4: "+ x4 + " and "+ "y4 "+ y4);
+        final double earthRadius = 6371.01;
+        double distanceAtlantaOrlando = earthRadius * Math.acos(Math.sin(Math.toRadians(x1)
+        *Math.sin(Math.toRadians(x2)) + Math.cos(Math.toRadians(x1))*Math.cos(Math.toRadians(x2))
+        *Math.cos(Math.toRadians(y1 - y2))));
+        double distanceOrlandoSavanna = earthRadius * Math.acos(Math.sin(Math.toRadians(x2)
+                *Math.sin(Math.toRadians(x3)) + Math.cos(Math.toRadians(x2))*Math.cos(Math.toRadians(x3))
+                *Math.cos(Math.toRadians(y2 - y3))));
+        double distanceSavannaCharlotte = earthRadius * Math.acos(Math.sin(Math.toRadians(x3)
+                *Math.sin(Math.toRadians(x4)) + Math.cos(Math.toRadians(x3))*Math.cos(Math.toRadians(x4))
+                *Math.cos(Math.toRadians(y3 - y4))));
+        double distanceCharlotteAtlanta = earthRadius * Math.acos(Math.sin(Math.toRadians(x4)
+                *Math.sin(Math.toRadians(x1)) + Math.cos(Math.toRadians(x4))*Math.cos(Math.toRadians(x1))
+                *Math.cos(Math.toRadians(y4 - y1))));
+        double distanceSavannahAtlanta = earthRadius * Math.acos(Math.sin(Math.toRadians(x3)
+                *Math.sin(Math.toRadians(x1)) + Math.cos(Math.toRadians(x3))*Math.cos(Math.toRadians(x1))
+                *Math.cos(Math.toRadians(y3 - y1))));
+        double firstPart = (distanceAtlantaOrlando + distanceOrlandoSavanna + distanceSavannahAtlanta)/2;
+        double areaOfFirstPart = Math.sqrt(firstPart * (firstPart - distanceAtlantaOrlando) *
+                (firstPart - distanceOrlandoSavanna) * (firstPart - distanceSavannahAtlanta));
+        double secondPart = (distanceSavannahAtlanta + distanceSavannaCharlotte + distanceCharlotteAtlanta)/2;
+        double areaOfSecondPart = Math.sqrt(secondPart * (secondPart - distanceSavannahAtlanta)
+        *(secondPart - distanceSavannaCharlotte) * (secondPart - distanceCharlotteAtlanta));
+        double totalArea = areaOfFirstPart + areaOfSecondPart;
+        System.out.println(" the area between four cities is: " +Math.round(totalArea));
+
 
     }
 }
