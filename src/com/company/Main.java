@@ -286,27 +286,95 @@ public class Main {
 //                Math.round(angleC * 100) / 100.0);
 
 
+//        Scanner input = new Scanner(System.in);
+//        System.out.println("please enter the radius");
+//        double radius = input.nextDouble();
+//        double x1 = radius * Math.cos(Math.PI/2-Math.toRadians(72));
+//        double y1 = radius * Math.sin(Math.PI/2 -Math.toRadians(72));
+//        double x2 = radius * Math.cos(Math.PI/2);
+//        double y2 = radius * Math.sin( Math.PI/2);
+//        double x3 = radius * Math.cos(Math.PI/2 + Math.toRadians(72));
+//        double y3 = radius * Math.sin(Math.PI/2 + Math.toRadians(72));
+//        double x4 = radius * Math.cos(Math.PI/2 + 2 * Math.toRadians(72));
+//        double y4 = radius * Math.sin(Math.PI/2 + 2 *Math.toRadians(72));
+//        double x5 = radius * Math.cos(Math.PI/2 + 3 * Math.toRadians(72));
+//        double y5 = radius * Math.sin(Math.PI/2 + 3 *Math.toRadians(72));
+//        System.out.println(Math.round(x1)+" "+Math.round(y1));
+//        System.out.println(Math.round(x2)+" "+Math.round(y2));
+//        System.out.println(Math.round(x3)+" "+Math.round(y3));
+//        System.out.println(Math.round(x4)+" "+Math.round(y4));
+//        System.out.println(Math.round(x5)+" "+Math.round(y5));
+
+
+//      Scanner input = new Scanner(System.in);
+//      String k = input.next();
+//      char ch = k.charAt(0);
+//      int i = (int) ch;
+//
+//      System.out.println(i);
+
+
+        String set1 = " 1 3 5 7\n"+
+              " 9 11 13 15\n" +
+              "17 19 21 23\n" +
+              "25 27 29 31";
+
+        String set2 = " 2 3 6 7\n" +
+             "10 11 14 15\n" +
+              "18 19 22 23\n" +
+              "26 27 30 31";
+
+        String set3 = " 4 5 6 7\n" +
+             "12 13 14 15\n" +
+              "20 21 22 23\n" +
+              "28 29 30 31";
+
+        String set4 = " 8 9 10 11\n" +
+              "12 13 14 15\n" +
+             "24 25 26 27\n" +
+              "28 29 30 31";
+
+        String set5 = "16 17 18 19\n" +
+              "20 21 22 23\n" +
+              "24 25 26 27\n" +
+              "28 29 30 31";
+        int day = 0;
         Scanner input = new Scanner(System.in);
-        System.out.println("please enter the radius");
-        double radius = input.nextDouble();
-        double x1 = radius * Math.cos(Math.PI/2-Math.toRadians(72));
-        double y1 = radius * Math.sin(Math.PI/2 -Math.toRadians(72));
-        double x2 = radius * Math.cos(Math.PI/2);
-        double y2 = radius * Math.sin( Math.PI/2);
-        double x3 = radius * Math.cos(Math.PI/2 + Math.toRadians(72));
-        double y3 = radius * Math.sin(Math.PI/2 + Math.toRadians(72));
-        double x4 = radius * Math.cos(Math.PI/2 + 2 * Math.toRadians(72));
-        double y4 = radius * Math.sin(Math.PI/2 + 2 *Math.toRadians(72));
-        double x5 = radius * Math.cos(Math.PI/2 + 3 * Math.toRadians(72));
-        double y5 = radius * Math.sin(Math.PI/2 + 3 *Math.toRadians(72));
-        System.out.println(Math.round(x1)+" "+Math.round(y1));
-        System.out.println(Math.round(x2)+" "+Math.round(y2));
-        System.out.println(Math.round(x3)+" "+Math.round(y3));
-        System.out.println(Math.round(x4)+" "+Math.round(y4));
-        System.out.println(Math.round(x5)+" "+Math.round(y5));
-
-
-
+        System.out.print(set1);
+        System.out.print("\nEnter Yes or No  ");
+        String answer = input.nextLine();
+        char ch1 = answer.charAt(0);
+        if (ch1 == 'y'){
+        day +=1;}
+        System.out.print("\nIs your birthday in Set2?\n");
+        System.out.print(set2);
+        System.out.print("\nEnter 0 for No and 1 for Yes: ");
+        answer = input.nextLine();
+        char ch2 = answer.charAt(0);
+        if (ch2 == 'y'){
+        day +=2;}
+        System.out.print("\nIs your birthday in Set3?\n");
+        System.out.print(set3);
+        System.out.print("\nEnter 0 for No and 1 for Yes: ");
+        answer = input.nextLine();
+        char ch3 = answer.charAt(0);
+        if (ch3 == 'y'){
+        day +=4;}
+        System.out.print("\nIs your birthday in Set4?\n");
+        System.out.print(set4);
+        System.out.print("\nEnter 0 for No and 1 for Yes: ");
+        answer = input.nextLine();
+        char ch4 = answer.charAt(0);
+        if (ch4 == 'y'){
+        day +=8;}
+        System.out.print("\nIs your birthday in Set5?\n");
+        System.out.print(set5);
+        System.out.print("\nEnter 0 for No and 1 for Yes: ");
+        answer = input.nextLine();
+        char ch5 = answer.charAt(0);
+        if (ch5 == 'y'){
+        day +=16;}
+        System.out.println("\nYour birthday is " + day + "!");
 
     }
 }
